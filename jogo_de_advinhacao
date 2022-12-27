@@ -1,0 +1,24 @@
+import random
+
+def mensagem_de_apresentacao():
+    print('Sou seu computador...')
+    print('Acabei de pensar em número entre 0 e 10.')
+    print('Será que você consegue advinhar qual foi?')
+
+escolha_pc = random.randint(0, 10)
+acertou = False
+contador = 0
+
+mensagem_de_apresentacao()
+
+while not acertou:
+    escolha_usuario = int(input('Qual é seu palpite? '))
+    contador += 1         # ficou nessa posicao pq conta a cada vez que o cara jogar
+    if escolha_usuario == escolha_pc:
+        acertou = True
+    else:
+        if escolha_usuario < escolha_pc:
+            print('Mais... tente mais uma vez.')
+        elif escolha_usuario > escolha_pc:
+            print('Menos... tente mais uma vez.')
+print('Acertou! Você precisou de {} chutes para acertar'.format(contador))
